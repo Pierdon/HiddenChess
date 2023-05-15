@@ -1,5 +1,10 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class ChessBoard {
@@ -12,10 +17,7 @@ public class ChessBoard {
      */
     private char[][] board;
 
-    private String[] bd={
-            "车马相仕帅仕相马车炮炮兵兵兵兵兵车马相仕帅仕相马车炮炮兵兵兵兵兵"
-            ,"车马相仕帅仕相马车炮炮兵兵兵兵兵车马相仕帅仕相马车炮炮兵兵兵兵兵"
-    };
+    private String[] bd;
 
     private boolean isFirst=true;
 
@@ -29,10 +31,31 @@ public class ChessBoard {
     private ArrayList<char[]> boardList=new ArrayList<>();
 
     public ChessBoard() {
+        // 指定文件路径
+        String filePath = "src/boardList.txt";
+        // 调用readTxtFile方法
+        readTxtFile(filePath);
         board=new char[bd.length][];
         for (int i = 0; i < bd.length; i++) {
             board[i] = bd[i].toCharArray();
         }
+    }
+    public void readTxtFile(String filePath) {
+        // 存放文件内容的字符串列表
+        List<String> fileContentList = new ArrayList<>();
+        // 创建文件对象
+        File file = new File(filePath);
+        // 读取文件内容
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                fileContentList.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // 将字符串列表转换为字符数组
+        bd=fileContentList.toArray(new String[0]);
     }
 
     public void setRed() {
