@@ -29,8 +29,8 @@ public class ChessBoard {
     public void setRed() {
         System.out.println("红方写1，黑方写0");
         isRed=(sc.nextInt()==1);
-        System.out.println("您为："+(isRed?"红方":"黑方"));
         sc.nextLine();
+        System.out.println("您为："+(isRed?"红方":"黑方"));
         System.out.println();
     }
 
@@ -173,7 +173,9 @@ public class ChessBoard {
             return true;
         }
         System.out.println("输入1重新开始，否则结束");
-        return sc.nextInt()==1;
+        boolean res=sc.nextInt()==1;
+        sc.nextLine();
+        return res;
     }
 
 
