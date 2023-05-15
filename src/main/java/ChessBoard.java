@@ -28,6 +28,13 @@ public class ChessBoard {
 
     private ArrayList<char[]> boardList=new ArrayList<>();
 
+    public ChessBoard() {
+        board=new char[bd.length][];
+        for (int i = 0; i < bd.length; i++) {
+            board[i] = bd[i].toCharArray();
+        }
+    }
+
     public void setRed() {
         System.out.println("红方写1，黑方写0");
         isRed=(sc.nextInt()==1);
@@ -37,10 +44,6 @@ public class ChessBoard {
     }
 
     public void refreshBoardList(){
-        board=new char[bd.length][];
-        for (int i = 0; i < bd.length; i++) {
-            board[i] = bd[i].toCharArray();
-        }
         boardList.clear();
         Collections.addAll(boardList, board);
     }
