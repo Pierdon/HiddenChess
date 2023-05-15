@@ -15,6 +15,11 @@ public class ChessBoard {
             ,{'车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵','车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵'}
     };
 
+    private String[] bd={
+            ""
+            ,""
+    };
+
     private boolean isFirst=true;
 
     private Scanner sc=new Scanner(System.in);
