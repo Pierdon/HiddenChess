@@ -10,14 +10,11 @@ public class ChessBoard {
      * 炮炮       76
      * 车马相仕帅仕相马车 16 15 14 13 12 11 10 9 8
      */
-    private char[][] board={
-            {'车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵','车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵'}
-            ,{'车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵','车','马','相','仕','帅','仕','相','马','车','炮','炮','兵','兵','兵','兵','兵'}
-    };
+    private char[][] board;
 
     private String[] bd={
-            ""
-            ,""
+            "车马相仕帅仕相马车炮炮兵兵兵兵兵车马相仕帅仕相马车炮炮兵兵兵兵兵"
+            ,"车马相仕帅仕相马车炮炮兵兵兵兵兵车马相仕帅仕相马车炮炮兵兵兵兵兵"
     };
 
     private boolean isFirst=true;
@@ -40,6 +37,10 @@ public class ChessBoard {
     }
 
     public void refreshBoardList(){
+        board=new char[bd.length][];
+        for (int i = 0; i < bd.length; i++) {
+            board[i] = bd[i].toCharArray();
+        }
         boardList.clear();
         Collections.addAll(boardList, board);
     }
