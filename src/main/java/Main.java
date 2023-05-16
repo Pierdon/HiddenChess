@@ -6,7 +6,8 @@ public class Main {
             chessBoard.setRed();
             chessBoard.rotateMatch();
         }
-        System.out.println("branch 5");
+        System.out.println("branch 9");
         System.out.println("branch 1");
+        System.out.println("branch 10");
     }
 }
