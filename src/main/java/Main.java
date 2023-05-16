@@ -6,7 +6,5 @@ public class Main {
             chessBoard.setRed();
             chessBoard.rotateMatch();
         }
-
-
     }
 }
