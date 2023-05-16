@@ -7,5 +7,6 @@ public class Main {
             chessBoard.rotateMatch();
         }
 
+
     }
 }
